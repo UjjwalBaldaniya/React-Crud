@@ -1,12 +1,12 @@
 import "./App.css";
 import Crud from "./Components/Crud";
-import Quiz from "./Components/Quiz";
+// import Quiz from "./Components/Quiz";
 
 function App() {
   return (
     <>
       <Crud />
-      <Quiz />
+      {/* <Quiz /> */}
     </>
   );
 }

@@ -1,0 +1,95 @@
+/* form */
+.employee-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: aliceblue;
+    width: 500px;
+    height: 520px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+    color: #0c7db1;
+}
+
+form {
+    width: 100%;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+    margin: 1.2rem 0;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+input {
+    padding: 0.7rem 1rem;
+    border: 1px solid black;
+    outline: none;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: transparent;
+    font-size: 15px;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.6rem 0;
+    background-color: #0c7db1;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* Table */
+.table_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 1rem 2rem;
+}
+
+th {
+    background-color: rgba(252, 252, 48, 0.771);
+}
+
+.error {
+    color: red;
+}
