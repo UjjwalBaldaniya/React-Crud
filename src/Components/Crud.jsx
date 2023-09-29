@@ -21,7 +21,7 @@ const Crud = () => {
     const [toggle, setToggle] = useState(false)
     const [edit, setEdit] = useState()
     const [formError, setFormError] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
+    // const [isSubmit, setIsSubmit] = useState(false);
 
     useEffect(() => {
         localStorage.setItem('user', JSON.stringify(addData))
@@ -30,8 +30,10 @@ const Crud = () => {
     const handleSubmitTodo = (e) => {
         e.preventDefault();
         if (toggle) {
-            if (inputField.fullname !== "" && inputField.location !== "" && inputField.designation !== "") {
+            if (inputField.fullname && inputField.location && inputField.designation) {
                 let newTableData = addData
+                console.log(newTableData);
+                debugger
                 Object.assign(newTableData[edit], inputField)
                 setAddData([...newTableData])
                 setInputField({
@@ -42,7 +44,7 @@ const Crud = () => {
             }
             setToggle(false)
         } else {
-            if (inputField.fullname !== "" && inputField.location !== "" && inputField.designation !== "") {
+            if (inputField.fullname && inputField.location && inputField.designation) {
                 setAddData([...addData, inputField])
                 setInputField({
                     fullname: "",
@@ -53,7 +55,6 @@ const Crud = () => {
             console.log(inputField);
 
             setFormError(validation(inputField))
-            setIsSubmit(true)
         }
     };
 
@@ -61,23 +62,16 @@ const Crud = () => {
         // debugger
         let storingError = {}
         if (!values.fullname) {
-            storingError.fullname = "error"
+            storingError.fullname = "Please enter username"
         }
         if (!values.location) {
-            storingError.location = "error"
+            storingError.location = "Please enter location"
         }
         if (!values.designation) {
-            storingError.designation = "error"
+            storingError.designation = "Please enter designation"
         }
         return storingError
     }
-
-    useEffect(() => {
-        console.log(formError);
-        if (Object.keys(formError).length === 0 && isSubmit) {
-            console.log(formError);
-        }
-    })
 
     const handleChangeTodo = (e) => {
         setInputField({
